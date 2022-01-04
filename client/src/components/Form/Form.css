@@ -1,0 +1,20 @@
+.forms {
+  display: block;
+  background-color: #4eb7dd6b;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  width: 40vw;
+  min-height: 93.1vh;
+}
+
+/* .input-box {
+  width: 100%;
+} */
+
+.btn {
+  background-color: #004ec2b9;
+  border-radius: 10px;
+  border: none;
+}
