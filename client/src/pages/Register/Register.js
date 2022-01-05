@@ -1,5 +1,5 @@
 import Navbar from '../../components/Nav/Nav';
-import Hero from '../../components/Hero/Hero';
+// import Hero from '../../components/Hero/Hero';
 import Form from '../../components/Form/Form';
 import './Register.css'
 
@@ -11,7 +11,7 @@ function Register() {
           <div className='left-side'>
             <Form/>
           </div>
-          <Hero/>
+          {/* <Hero/> */}
         </div>
       </div>
     );

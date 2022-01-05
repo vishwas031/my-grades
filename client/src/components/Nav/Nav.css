@@ -1,5 +1,8 @@
 nav {
-  background-image: linear-gradient(to right, #4eb8dd, #14313b89);
+  background-image: linear-gradient(to right, #44a5c8, #4eb7dd72);
   font-weight: 700;
   font-size: large;
+}
+.nav-opt {
+  color: #252525;
 }

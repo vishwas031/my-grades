@@ -1,5 +1,6 @@
 import { Container } from "react-bootstrap";
 import styled from "styled-components"
+import './Hero.css'
 
 const HeroComponent = styled.header`
     padding: 5rem 2rem;
@@ -20,7 +21,7 @@ const Hero = ()=>{
     return (
         <HeroComponent>
             <Container className="text-white">
-                    <Heading>
+                    <Heading className="heading">
                         Register
                     </Heading>
             </Container>
