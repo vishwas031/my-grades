@@ -1,19 +1,14 @@
-import Navbar from '../../components/Nav/Nav';
-// import Hero from '../../components/Hero/Hero';
 import Form from '../../components/Form/Form';
 import './Register.css'
 
-function Register() {
+function Register({text}) {
+  let array = text.split(',')
     return (
-      <div>
-        <Navbar/>
         <div className='main'>
           <div className='left-side'>
-            <Form/>
+            <Form array={array}/>
           </div>
-          {/* <Hero/> */}
         </div>
-      </div>
     );
   }
   
