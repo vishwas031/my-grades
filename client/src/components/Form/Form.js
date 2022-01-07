@@ -1,6 +1,6 @@
 import {Form, Button} from "react-bootstrap";
 import Student from '../assets/Student.png'
-import Admin from '../assets/Admin.png'
+// import Admin from '../assets/Admin.png'
 import './Form.css'
 
 const Form1 = ({array})=>{
@@ -15,16 +15,16 @@ const Form1 = ({array})=>{
             </div>
             <Form className="input-box">
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Control type='text' placeholder={array[2]} />
+                  <Form.Control type='text' placeholder='College Email ID' />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Control type='text' placeholder={array[3]} />
+                  <Form.Control type='integer' placeholder={array[2]} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Control type={array[5]} placeholder={array[4]} className="text-secondary"/>
+                  <Form.Control type={array[4]} placeholder={array[3]} className="text-secondary"/>
                 </Form.Group>
                 <Button variant="primary" type="submit" className="btn">
-                  {array[6]}
+                  {array[5]}
                 </Button>
             </Form>
         </div>

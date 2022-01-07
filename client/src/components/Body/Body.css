@@ -1,0 +1,10 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+.left-side {
+  flex: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
