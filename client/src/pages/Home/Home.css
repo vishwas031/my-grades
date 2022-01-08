@@ -1,7 +1,14 @@
-.bg-img {
+#bg-img-home {
   background-image: url("../../components/assets/Home.jpg");
   filter: blur(0px);
   -webkit-filter: blur(0px);
+  width: 100%;
+  min-width: 300px;
+  min-height: 93.1vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
 }
 
 .users {

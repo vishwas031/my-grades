@@ -8,3 +8,13 @@
   justify-content: center;
   align-items: center;
 }
+#bg-img-reg {
+  background-image: url("../../components/assets/Register.jpg");
+  width: 100%;
+  min-width: 300px;
+  min-height: 93.1vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}

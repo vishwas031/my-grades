@@ -4,9 +4,8 @@
   position: absolute;
 }
 
-.bg-img {
-  filter: blur(3px);
-  -webkit-filter: blur(3px);
+#bg-img-res {
+  background-image: url("../../components/assets/MyResult.jpg");
   width: 100%;
   min-width: 300px;
   min-height: 93.1vh;
