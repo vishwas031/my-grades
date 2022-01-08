@@ -1,9 +1,10 @@
 import './App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-// import Nav1 from './components/Nav/Nav';
 import Register from './pages/Register/Register';
 import MyResult from './pages/MyResult/MyResult';
 import Home from './pages/Home/Home'
+import AdminLogin from './pages/AdminLogin/AdminLogin'
+import Upload from './pages/Upload/Upload'
 
 
 
@@ -21,6 +22,12 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/MyResult" element={<MyResult />}/>
+        </Routes>
+        <Routes>
+          <Route path="/upload" element={<Upload />}/>
+        </Routes>
+        <Routes>
+          <Route path="/AdminLogin" element={<AdminLogin/>}/>
         </Routes>
     </BrowserRouter>
   );

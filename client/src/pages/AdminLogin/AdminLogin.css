@@ -1,0 +1,10 @@
+#bg-img-admin {
+  background-image: url("../../components/assets/Login_Admin.jpg");
+  width: 100%;
+  min-width: 300px;
+  min-height: 93.1vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}

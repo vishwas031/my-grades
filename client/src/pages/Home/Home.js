@@ -9,8 +9,11 @@ function Home() {
 
     const navigate = useNavigate()
 
-    function navi (){
+    function naviToStudent (){
         navigate("/register")
+    }
+    function naviToAdmin (){
+        navigate("/AdminLogin")
     }
 
       const isBigScreen = useMediaQuery({ query: '(min-width: 651px)' })
@@ -18,23 +21,23 @@ function Home() {
     return (
         <div>
             <Nav1/>
-            <div className="bg-img"></div>
+            <div id="bg-img-home"></div>
             { isBigScreen && <div className='users p-5 text-center flex'>
-                <div className="user-block" onClick={navi}>
+                <div className="user-block" onClick={naviToStudent}>
                     <img alt='Student' src={Student}/>
                     <h2>Student</h2>
                 </div>
-                <div className="user-block">
+                <div className="user-block" onClick={naviToAdmin}>
                     <img alt='Admin' src={Admin}/>
                     <h2>Admin</h2>
                 </div>
             </div>}
             { isOnlyMobile && <div className='users2 p-5 text-center flex'>
-                <div className="user-block">
+                <div className="user-block" onClick={naviToStudent}>
                     <img alt='Student' src={Student}/>
                     <h2>Student</h2>
                 </div>
-                <div className="user-block">
+                <div className="user-block" onClick={naviToAdmin}>
                     <img alt='Student' src={Admin}/>
                     <h2>Admin</h2>
                 </div>

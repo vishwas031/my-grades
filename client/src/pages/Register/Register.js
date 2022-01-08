@@ -46,7 +46,7 @@ const Register =({isSignUpFlow , text})=>{
             <div className='main'>
           <div className='left-side'>
             <>
-            <div className="bg-img"></div>
+            <div id="bg-img-reg"></div>
             <div className="forms p-5 text-center">
                 <div className="user">
                     <h1 className="text-white mb-3">{text}</h1>
@@ -69,14 +69,6 @@ const Register =({isSignUpFlow , text})=>{
         </>
         
     );
-
-    // return(
-    //     <>
-    //         <Body text='Student,Register,Roll no. (20XXBCS-0XX),Name,College Email ID,text,Get OTP'/>
-    //         {errorMsg && <ErrorMessage>{errorMsg}</ErrorMessage>}
-    //     </>
-        
-    // )
 }
 
 export default Register;
