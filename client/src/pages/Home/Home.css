@@ -1,0 +1,55 @@
+#bg-img-home {
+  background-image: url("../../components/assets/Home.jpg");
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+  width: 100%;
+  min-width: 300px;
+  min-height: 93.1vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.users {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+  min-width: 50vw;
+  min-height: 93.1vh;
+  position: absolute;
+  top: 8vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.users .user-block img {
+  width: 100px;
+  height: 100px;
+}
+.users2 {
+  color: white;
+  min-width: 100vw;
+  min-height: 93.1vh;
+  position: absolute;
+  top: 8vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.users2 .user-block {
+  margin: 2rem 0 3rem 0;
+}
+
+.users2 .user-block img {
+  width: 80px;
+  height: 80px;
+}
+
+.user-block {
+  cursor: pointer;
+}
+.user-block img:hover {
+  transform: scale(1.1);
+}
