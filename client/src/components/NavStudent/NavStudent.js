@@ -3,6 +3,11 @@ import { Navbar, Container, Nav} from "react-bootstrap";
 // import {Link} from 'react-router-dom'
 
 const NavStudent = ()=>{
+  var Opts ='Login'
+  const token = localStorage.getItem("token");
+      if(token) 
+        Opts = 'Logout';
+
     return (
         <Navbar collapseOnSelect expand="lg" style={{zIndex:1}} >
             <Container>
@@ -12,9 +17,9 @@ const NavStudent = ()=>{
                   <Nav className="me-auto">
                   </Nav>
                   <Nav >
-                    <Nav.Link href="register" className="px-5 nav-opt">Register</Nav.Link>
-                    <Nav.Link href="login" className="px-5 nav-opt">Login</Nav.Link>
-                    <Nav.Link href="MyResult" className="px-5 nav-opt">My Result</Nav.Link>
+                    { !token && <Nav.Link href="register" className="px-5 nav-opt">Register</Nav.Link>}
+                    <Nav.Link href="login" className="px-5 nav-opt">{Opts}</Nav.Link>
+                    {token && <Nav.Link href="MyResult" className="px-5 nav-opt">My Result</Nav.Link>}
                   </Nav>
                 </Navbar.Collapse>
             </Container>
