@@ -4,11 +4,17 @@
   -webkit-filter: blur(0px);
   width: 100%;
   min-width: 300px;
-  min-height: 93.1vh;
+  min-height: 93vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -1;
+}
+@media only screen and (max-height: 440px) {
+  #bg-img-home {
+    background-image: none;
+    background-color: #359bc7;
+  }
 }
 
 .users {

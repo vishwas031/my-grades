@@ -8,11 +8,17 @@
   background-image: url("../../components/assets/MyResult.jpg");
   width: 100%;
   min-width: 300px;
-  min-height: 93.1vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -1;
+  min-height: 93vh;
+}
+@media only screen and (max-height: 440px) {
+  #bg-img-res {
+    background-image: none;
+    background-color: #359bc7;
+  }
 }
 
 .input-box {
@@ -38,6 +44,6 @@
   background-color: #009ad3;
   border-radius: 10px;
   border: none;
-  margin-top: 3rem;
+  margin-top: rem;
   font-family: Mitr, sans-serif;
 }

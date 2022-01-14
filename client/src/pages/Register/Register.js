@@ -5,6 +5,8 @@ import { useState } from 'react';
 import './Register.css'
 import styled from 'styled-components';
 import NavStudent from '../../components/NavStudent/NavStudent'
+// import { useNavigate } from 'react-router-dom';
+import MyResult from '../MyResult/MyResult'
 
 const ErrorMessage = styled.p`
     color: red
@@ -12,11 +14,13 @@ const ErrorMessage = styled.p`
 
 
 const Register =({isSignUpFlow , text})=>{
+    const token = localStorage.getItem("token");
+
+    // const navigate = useNavigate()
     const [email, setEmail] = useState("")
     // const [name, setName] = useState("")
     const [errorMsg, setErrorMsg] = useState("")
 
-    // const navigate = useNavigate()
 
     const handleClick = async ()=>{
         let data;
@@ -42,6 +46,7 @@ const Register =({isSignUpFlow , text})=>{
     }
     return (
         <>
+            {!token && <> 
             <NavStudent/>
             <div className='main'>
           <div className='left-side'>
@@ -66,8 +71,9 @@ const Register =({isSignUpFlow , text})=>{
           </div>
           {errorMsg && <ErrorMessage>{errorMsg}</ErrorMessage>}
         </div>
+        </>}
+            {token && <MyResult/>}
         </>
-        
     );
 }
 
