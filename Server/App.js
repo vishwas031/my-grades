@@ -1,26 +1,31 @@
 const cors = require('cors')
-
+const express = require('express')
+const mongoose = require("mongoose")
 
 require("dotenv").config();
-const express = require('express')
 
-
-
-// const admin = require("./src/routes/admin");
-// const student = require("./src/routes/student");
-
+const admin = require("./src/routes/admin");
+const student = require("./src/routes/student");
 
 const app = express();
 
 
 app.get('/',(req,res)=>
-    res.send("HEyyy"));
+    res.send("HELLO"));
 
-// app.use("/admin",admin)
-// app.use("/student",student)
+mongoose.connect(
+    process.env.MONGO_URI    
+).then(()=>{
+    console.log("Connected to DB")
 
-
-
-app.listen(process.env.PORT, ()=>{
-    console.log(`listening to port ${process.env.PORT}`)
+    app.use("/admin", admin)
+    app.use("/student",student)
+    app.listen(process.env.PORT, ()=>{
+        console.log(`listening to port ${process.env.PORT}`)
+    })
 })
+.catch((error)=>{
+    console.log(error)
+    throw new Error(error)
+})
+
