@@ -17,6 +17,7 @@ mongoose.connect(
     process.env.MONGO_URI    
 ).then(()=>{
     console.log("Connected to DB")
+    app.use(cors())
 
     app.use("/admin", admin)
     app.use("/student",student)
