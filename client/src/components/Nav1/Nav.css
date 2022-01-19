@@ -1,8 +1,64 @@
+@media only screen and (min-height: 500px) {
+  body {
+    height: 100vh;
+    overflow-y: hidden;
+  }
+}
+@media only screen and (max-height: 440px) {
+  body {
+    background-color: #359bc7;
+  }
+  .forms {
+    transform: translate(0, 45px);
+  }
+  .user {
+    transform: scale(0.9);
+  }
+  .user h1,
+  .user img {
+    margin: -10px;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    color: rgb(211, 211, 211);
+  }
+}
+@media only screen and (max-height: 570px) {
+  h1,
+  h2,
+  h3,
+  p,
+  input,
+  label,
+  .btn,
+  .user-logo {
+    transform: scale(0.7);
+    margin: 0;
+  }
+  .user h3 {
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  .mb-3 {
+    margin: -10px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .left-side {
+    height: 100%;
+  }
+  #bg-img-res {
+    height: 100%;
+  }
+}
 nav {
   background-image: linear-gradient(to right, #1c0e50, #1f7da5);
   font-weight: 700;
   font-size: large;
+  min-height: 7vh;
 }
 .nav-opt {
   color: #252525;
+}
+.left-side {
+  min-height: 93vh;
 }

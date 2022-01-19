@@ -18,3 +18,9 @@
   background-size: cover;
   z-index: -1;
 }
+@media only screen and (max-height: 440px) {
+  #bg-img-reg {
+    background-image: none;
+    background-color: #359bc7;
+  }
+}
