@@ -9,8 +9,6 @@ router.use(express.json())
 
 router.post('/AdminLogin' ,AdminLogin)
 
-router.post('/upload',isAdmin,(req,res)=>{
-    upload
-});
+router.post('/upload',upload)
 
 module.exports = router ;
