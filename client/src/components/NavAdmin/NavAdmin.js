@@ -1,21 +1,30 @@
 import { Navbar, Container, Nav} from "react-bootstrap";
-// import '../NavStudent/NavStudent.css'
-// import {Link} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 const NavStudent = ()=>{
+
+  const navigate = useNavigate()
+  const token = localStorage.getItem("token");
+
+  const logout = ()=>{
+    if(token){
+      localStorage.removeItem("token")
+      navigate("/admin/AdminLogin")
+    }
+  }
     return (
         <Navbar collapseOnSelect expand="lg" style={{zIndex:1}} >
             <Container>
                 <Navbar.Brand href="/" className="text-white" >MyGrades</Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                {token && <><Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                   <Nav className="me-auto">
                   </Nav>
                   <Nav >
-                    <Nav.Link href="AdminLogin" className="px-5 nav-opt">Login</Nav.Link>
-                    <Nav.Link href="upload" className="px-5 nav-opt">Upload</Nav.Link>
+                    <Nav.Link href="AdminLogin" className="px-5 nav-opt" onClick={logout}>Logout</Nav.Link>
                   </Nav>
                 </Navbar.Collapse>
+                </>}
             </Container>
         </Navbar>
     )

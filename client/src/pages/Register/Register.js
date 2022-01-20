@@ -1,21 +1,21 @@
 import Student from '../../components/assets/Student.png'
-import {Form, Button} from "react-bootstrap";
+import {Form} from "react-bootstrap";
 import axios from 'axios'
 import { useState } from 'react';
 import './Register.css'
 import styled from 'styled-components';
 import NavStudent from '../../components/NavStudent/NavStudent'
-// import { useNavigate } from 'react-router-dom';
-import MyResult from '../MyResult/MyResult'
 
 const ErrorMessage = styled.p`
     color: red
 `
+const BTN = styled.p`
+    display:block;
+    background-color: #359bc7
+`
 
 
 const Register =({isSignUpFlow , text})=>{
-    const token = localStorage.getItem("token");
-
     // const navigate = useNavigate()
     const [email, setEmail] = useState("")
     // const [name, setName] = useState("")
@@ -26,14 +26,14 @@ const Register =({isSignUpFlow , text})=>{
         let data;
         if(isSignUpFlow){
             console.log("signing in")
-            const {data: signUpData} = await axios.post("http://localhost:8080/auth/signup",{
+            const {data: signUpData} = await axios.post("http://localhost:8080/student/register",{
                 email
             })
             data = signUpData
             console.log(data)
         }else{
             console.log("logging in")
-            const {data: loginData} = await axios.post("http://localhost:8080/auth/login",{
+            const {data: loginData} = await axios.post("http://localhost:8080/student/login",{
                 email
             });
             data = loginData
@@ -46,7 +46,6 @@ const Register =({isSignUpFlow , text})=>{
     }
     return (
         <>
-            {!token && <> 
             <NavStudent/>
             <div className='main'>
           <div className='left-side'>
@@ -62,17 +61,15 @@ const Register =({isSignUpFlow , text})=>{
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                       <Form.Control type="text" placeholder="College Email ID" className="text-secondary" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
                     </Form.Group>
-                    <Button variant="primary" type="submit" className="btn" onClick={handleClick}>
+                    <BTN variant="primary" type="submit" className="btn" onClick={handleClick}>
                         Get OTP
-                    </Button>
+                    </BTN>
                 </Form>
             </div>
             </>
           </div>
           {errorMsg && <ErrorMessage>{errorMsg}</ErrorMessage>}
         </div>
-        </>}
-            {token && <MyResult/>}
         </>
     );
 }

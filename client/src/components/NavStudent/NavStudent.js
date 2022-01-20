@@ -1,6 +1,4 @@
 import { Navbar, Container, Nav} from "react-bootstrap";
-// import '../NavStudent/NavStudent.css'
-// import {Link} from 'react-router-dom'
 
 const NavStudent = ()=>{
   var Opts ='Login'
@@ -19,7 +17,6 @@ const NavStudent = ()=>{
                   <Nav >
                     { !token && <Nav.Link href="register" className="px-5 nav-opt">Register</Nav.Link>}
                     <Nav.Link href="login" className="px-5 nav-opt">{Opts}</Nav.Link>
-                    {token && <Nav.Link href="MyResult" className="px-5 nav-opt">My Result</Nav.Link>}
                   </Nav>
                 </Navbar.Collapse>
             </Container>

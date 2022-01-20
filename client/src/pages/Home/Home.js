@@ -5,15 +5,16 @@ import Nav1 from '../../components/Nav1/Nav';
 import { useNavigate } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive'
 
+
 function Home() {
 
     const navigate = useNavigate()
 
     function naviToStudent (){
-        navigate("/register")
+        navigate("student/register")
     }
     function naviToAdmin (){
-        navigate("/AdminLogin")
+        navigate("admin/AdminLogin")
     }
 
       const isBigScreen = useMediaQuery({ query: '(min-width: 651px)' })
