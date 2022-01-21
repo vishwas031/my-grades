@@ -7,7 +7,7 @@ const isAdmin = require("../middleware/isAdmin");
 
 router.use(express.json())
 
-router.post('/AdminLogin' ,AdminLogin)
+router.post('/AdminLogin',AdminLogin)
 
 router.post('/upload',isAdmin,(req,res)=>{
     upload

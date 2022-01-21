@@ -7,6 +7,10 @@ import Admin from '../../components/assets/Admin.png'
 import './AdminLogin.css'
 import axios from 'axios'
 
+const ErrorMessage = styled.p`
+    color: red;
+    font-weight: bold
+`
 const BTN = styled.p`
     display:block;
     background-color: #359bc7
@@ -14,6 +18,7 @@ const BTN = styled.p`
 const AdminLogin =()=>{
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState("")
 
   const navigate = useNavigate()
 
@@ -24,6 +29,9 @@ const AdminLogin =()=>{
       password
     });
     data = AdminData;
+    if(data.error.length){
+      return setErrorMsg (data.error[0].msg);
+  }
     localStorage.setItem("token",data.data.token)
     navigate("/admin/upload") 
   }
@@ -52,6 +60,7 @@ const AdminLogin =()=>{
                         Login
                     </BTN>
                 </Form>
+                {errorMsg && <ErrorMessage>{errorMsg}</ErrorMessage>}
             </div>
             </>
           </div>
