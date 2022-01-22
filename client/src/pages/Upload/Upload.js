@@ -1,7 +1,12 @@
-import {Form, Button} from "react-bootstrap";
+import {Form} from "react-bootstrap";
 import NavAdmin from "../../components/NavAdmin/NavAdmin";
 import Admin from '../../components/assets/Admin.png'
 import './Upload.css'
+import styled from 'styled-components';
+const BTN = styled.p`
+    display:block;
+    background-color: #359bc7
+`
 
 const Upload =()=>{
     return(
@@ -29,9 +34,9 @@ const Upload =()=>{
                         <label for="upload" className="text-white">Upload the CSV file</label>
                         <Form.Control type="file" id="upload" className="text-secondary"/>
                     </Form.Group>
-                    <Button variant="primary" type="submit" className="btn" >
+                    <BTN variant="primary" type="submit" className="btn" >
                         Upload
-                    </Button>
+                    </BTN>
                 </Form>
                 </div>
                 </>

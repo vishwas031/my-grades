@@ -6,14 +6,8 @@ const {myResult} = require ('../controllers/student/myResult.js')
 const isLoggedIn = require("../middleware/isLoggedIn")
 
 
-router.post('/register',(req,res)=>{
-    register
-} );
-router.post('/login',(req,res)=>{
-    login
-});
-router.post('/myResult',isLoggedIn,(req,res)=>{
-    myResult
-});
+// router.post('/register',register);
+// router.post('/login',login);
+// router.post('/myResult',isLoggedIn,myResult);
 
 module.exports = router ;

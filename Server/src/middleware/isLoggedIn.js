@@ -4,11 +4,9 @@ require("dotenv").config();
 const jwt = require('jsonwebtoken');
 const student = require('../models/student.js');
 
-const {SECRET_KEY} = process.env.SECRET_KEY;
-
 //verify the token
 const isLoggedIn = async(req, res, next)=>{
-    const verifyToken = jwt.verify(req.headers.token, SECRET_KEY)
+    const verifyToken = jwt.verify(req.headers.token, process.env.SECRET_KEY)
 
     //If token is not valid
     if(!verifyToken){

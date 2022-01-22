@@ -1,7 +1,12 @@
-import {Form, Button} from "react-bootstrap";
+import {Form} from "react-bootstrap";
 import Nav1 from "../../components/NavStudent/NavStudent"
 import Student from '../../components/assets/Student.png'
 import './MyResult.css'
+import styled from 'styled-components';
+const BTN = styled.p`
+    display:block;
+    background-color: #359bc7
+`
 
 const MyResult =()=>{
     return(
@@ -29,9 +34,9 @@ const MyResult =()=>{
                   <label for="upload" className="text-white">Attach Private key here</label>
                   <Form.Control type='file' placeholder='Private Key' id="upload" className="text-secondary"/>
                 </Form.Group>
-                <Button variant="primary" type="submit" className="btn">
+                <BTN variant="primary" type="submit" className="btn">
                   Get Result
-                </Button>
+                </BTN>
             </Form>
         </div>
         </>

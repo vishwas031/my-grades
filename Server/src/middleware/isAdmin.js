@@ -4,17 +4,21 @@ require("dotenv").config();
 const jwt = require('jsonwebtoken');
 const admin = require('../models/admin.js');
 
-const {SECRET_KEY} = process.env.SECRET_KEY;
-
 //verify the token
 const isValid = async(req, res, next)=>{
-    const verifyToken = jwt.verify(req.headers.token, SECRET_KEY)
+    if(!req.headers.token){
+        return res.send({
+            status: 404,
+            message: "You need to Login as Admin"
+        })
+    }
+    const verifyToken = jwt.verify(req.headers.token, process.env.JWT_KEY)
 
     //If token is not valid
     if(!verifyToken){
         return res.send({
             status: 404,
-            message: "Invalid token"
+            message: "Invalid user"
         }).end()
     }
 
@@ -28,7 +32,7 @@ const isValid = async(req, res, next)=>{
             message: "Admin not found"
         })
     }
-
+    console.log(verifyToken)
     //move to next function
     next()
 }

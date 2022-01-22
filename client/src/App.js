@@ -15,19 +15,19 @@ function App() {
           <Route path="/" element={<Home/>}/>
         </Routes>
         <Routes>
-          <Route path="/register" element={<Register isSignUpFlow={true} text='Register'/>}/>
+          <Route path="/student/register" element={<Register isSignUpFlow={true} text='Register'/>}/>
         </Routes>
         <Routes>
-          <Route path="/login" element={<Register isSignUpFlow={false} text='Login'/>}/>
+          <Route path="/student/login" element={<Register isSignUpFlow={false} text='Login'/>}/>
         </Routes>
         <Routes>
-          <Route path="/MyResult" element={<MyResult />}/>
+          <Route path="/student/MyResult" element={<MyResult />}/>
         </Routes>
         <Routes>
-          <Route path="/upload" element={<Upload />}/>
+          <Route path="/admin/upload" element={<Upload />}/>
         </Routes>
         <Routes>
-          <Route path="/AdminLogin" element={<AdminLogin/>}/>
+          <Route path="/admin/AdminLogin" element={<AdminLogin/>}/>
         </Routes>
     </BrowserRouter>
   );
