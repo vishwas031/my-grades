@@ -8,7 +8,6 @@ const resultSchema = new Schema({
         required:true
     },
     roll_no:{
-        // bcs_2020025@iiitm.ac.in
         type:String,
         required:true
     },
@@ -24,17 +23,6 @@ const resultSchema = new Schema({
         type:Number,
         default:0
     }
-    // email:{
-    //     type:String,
-    //     trim: true,
-    //     required:true,
-    //     unique: true
-    // },
-    // password:{
-    //     type:String,
-    //     required:true,
-    //     min:5
-    // }
 })
 
 
