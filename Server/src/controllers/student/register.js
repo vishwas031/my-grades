@@ -44,47 +44,50 @@ async function sendMail(email) {
     };
 
     const result = await transport.sendMail(mailOptions);
+  console.log("mail sent")
+
     return result;
   } catch (error) {
     return error;
   }
 }
 
-exports.register= async (req,res)=>{
-    const email= req.body.email
-
-    //Check if the user already exist in the DB
-    const user = await student.findOne({ "email": email })
-    if (user) {
-        return res.json({
-            error:[
-                {
-                    msg: "User already exist, Login to get your Result"
-                }
-            ],
-            data:null
-            }
-        ).end()
+exports.register = async (req, res) => {
+  const { email } = req.body
+  // generatePair()
+  //Check if the user is verified or not
+  const user = await student.find({ "email_id": email })
+  if (user.length) {
+    if(!user[0].isVerified)
+    return res.json({
+      error: [
+        {
+          msg: "User already exist, Login to get your Result"
+        }
+      ],
+      data: null
     }
+    ).end()
+  }
 
-    //Send OTP to user email and in the DB if user didn't exist in DB
+  //Send OTP to user email and in the DB
 
-    const newStudent = await student.create({
-      "email_id": email,
-      "otp": otp,
-      "public_key": "temporary_key"
+  await student.create({
+    "email_id": email,
+    "otp": otp,
+    "public_key": "temporary_key"
   })
-    sendMail(email)
+  sendMail(email)
     .then(res.json({
-      error:[
-          {
-              msg: null
-          }
+      error: [
+        {
+          msg: null
+        }
       ],
       data: "OTP sent to mail",
       email: email
-      }
-  ))
-    .catch((error)=>console.log(error.message))
+    }
+    ))
+    .catch((error) => console.log(error.message))
 }
 
