@@ -8,13 +8,21 @@ const arr = require('../../routes/output.json')
 
 exports.upload = async (req, res) => {
     // console.log("in upload function")
+
+    const result = {
+        "subject1": ele.subject1,
+        "subject2": ele.subject2,
+        "subject3": ele.subject3
+    }
+
     arr.forEach(ele => {
         const newAdmin = upload.create({
             "sem_no": ele.sem_no,
             "roll_no": ele.roll_no,
-            "subject1": ele.subject1,
-            "subject2": ele.subject2,
-            "subject3": ele.subject3
+            "result": JSON.stringify(result)
+            // "subject1": ele.subject1,
+            // "subject2": ele.subject2,
+            // "subject3": ele.subject3
         });
     });
     // console.log(req.body);
