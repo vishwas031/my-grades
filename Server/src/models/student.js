@@ -5,7 +5,8 @@ const studentSchema = new Schema({
 
     email_id:{
         type:String,
-        required:true
+        required:true,
+        unique: true
     },
     otp:{
         type:String,
