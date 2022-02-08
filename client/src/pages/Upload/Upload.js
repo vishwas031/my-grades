@@ -32,9 +32,9 @@ const Upload =()=>{
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <label for="upload" className="text-white">Upload the CSV file</label>
-                        <Form.Control type="file" id="upload" className="text-secondary"/>
+                        <Form.Control type="file" id="upload" name="" className="text-secondary"/>
                     </Form.Group>
-                    <BTN variant="primary" type="submit" className="btn" >
+                    <BTN variant="primary" type="submit" className="btn" action='/admin/upload'>
                         Upload
                     </BTN>
                 </Form>
