@@ -2,13 +2,14 @@ const student = require('../../models/student')
 
 
 exports.otpCheck = async(req,res)=>{
-    //Now checking the OTP and updating the DB
+    //Now checking the OTP
   const enteredOTP = req.body.otp
   const email = req.body.email
-  const user = await student.findOne({ "email": email })
-  console.log("otp got from DB", user)
-  if(enteredOTP === user.otp){
-   await student.updateOne({email:email},{
+  const user = await student.find({ "email_id": email })
+  console.log(user)
+  console.log("otp got from DB", user[0].otp)
+  if(enteredOTP === user[0].otp){
+   await student.updateOne({"email_id":email},{
      $set:{isVerified: 1}
    })
    return res.json({
