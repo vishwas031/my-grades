@@ -8,33 +8,12 @@ const resultSchema = new Schema({
         required:true
     },
     roll_no:{
-        // bcs_2020025@iiitm.ac.in
         type:String,
         required:true
     },
-    subject1:{
-        type:Number,
-        default:0
-    },
-    subject2:{
-        type:Number,
-        default:0
-    },
-    subject3:{
-        type:Number,
-        default:0
+    result:{
+        type:String
     }
-    // email:{
-    //     type:String,
-    //     trim: true,
-    //     required:true,
-    //     unique: true
-    // },
-    // password:{
-    //     type:String,
-    //     required:true,
-    //     min:5
-    // }
 })
 
 

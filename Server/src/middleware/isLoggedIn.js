@@ -17,7 +17,7 @@ const isLoggedIn = async(req, res, next)=>{
     }
 
     // If token is valid, search the user in database
-    const studentValid = await student.findOne({email: verifyToken.email})
+    const studentValid = await student.findOne({"email_id": verifyToken.email})
 
     // If admin is not found
     if(!studentValid){

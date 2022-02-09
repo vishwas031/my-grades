@@ -8,10 +8,7 @@ const admin = require("./src/routes/admin");
 const student = require("./src/routes/student");
 
 const app = express();
-
-
-app.get('/',(req,res)=>
-    res.send("HELLO"));
+app.use(express.json())
 
 mongoose.connect(
     process.env.MONGO_URI    

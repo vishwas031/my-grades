@@ -6,10 +6,6 @@ import './Register.css'
 import styled from 'styled-components';
 import NavStudent from '../../components/NavStudent/NavStudent'
 
-// const sendMail = require('./EmailAuth')
-
-// sendMail('420farziman@gmail.com')
-
 const ErrorMessage = styled.p`
     color: red
 `
