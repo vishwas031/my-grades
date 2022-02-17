@@ -8,7 +8,7 @@ import './AdminLogin.css'
 import axios from 'axios'
 
 const ErrorMessage = styled.p`
-    color: red;
+    color: #51c5f6;
     font-weight: bold
 `
 const BTN = styled.p`
@@ -49,6 +49,7 @@ const AdminLogin =()=>{
                     <img alt='robo' src={Admin} className="user-logo"/>
                     <h3 className="text-white">Admin</h3>
                  </div>
+                {errorMsg && <ErrorMessage>{errorMsg}</ErrorMessage>}
                 <Form className="input-box">
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                       <Form.Control type="text" placeholder="Email ID" className="text-secondary" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
@@ -60,7 +61,6 @@ const AdminLogin =()=>{
                         Login
                     </BTN>
                 </Form>
-                {errorMsg && <ErrorMessage>{errorMsg}</ErrorMessage>}
             </div>
             </>
           </div>
