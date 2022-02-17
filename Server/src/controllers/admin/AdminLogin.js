@@ -8,7 +8,19 @@ exports.AdminLogin = async(req, res) => {
 
     //Fetch admin from db and check if admin exists
     const user = await admin.findOne({ "email": email })
-    if (!user) {
+
+    if(!email.length){
+        return res.json({
+            error:[
+                {
+                    msg: "Enter email ID"
+                }
+            ],
+            data:null
+            }
+        ).end()
+    }
+    else if (!user) {
         return res.json({
             error:[
                 {
@@ -24,11 +36,22 @@ exports.AdminLogin = async(req, res) => {
     const passwordMatches = await bcrypt.compare(password, user.password)
 
     //Send the response if password is incorrect
-    if (!passwordMatches) {
+    if(!password.length){
         return res.json({
             error:[
                 {
-                    msg: "Invalid Password"
+                    msg: "Enter Password"
+                }
+            ],
+            data:null
+            }
+        ).end()
+    }
+    else if (!passwordMatches) {
+        return res.json({
+            error:[
+                {
+                    msg: "Invalid Password !!"
                 }
             ],
             data:null

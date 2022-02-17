@@ -52,20 +52,18 @@ async function sendMail(email) {
 
 
 exports.login = async (req, res) => {
-  const { email } = req.body
+  const email = req.body.email
   console.log(email)
   //Check if the user already exist in the DB
   const user = await student.find({ "email_id": email })
-
-// console.log(user)
   //if user exist and is verified
 
     if(user.length){
       if(user[0].isVerified){
       await student.updateOne({
         "email_id": email},{
-        "otp": otp
-      })
+          $set:{"otp": otp}
+        })
       sendMail(email)
         .then(res.json({
           error: [
@@ -82,7 +80,8 @@ exports.login = async (req, res) => {
     }
 
     // if user doesn't exist or user exist but not verified
-    return res.json({
+    else{
+      return res.json({
         error: [
           {
             msg: "User didn't exist, First Register yourself"
@@ -90,6 +89,7 @@ exports.login = async (req, res) => {
         ],
         data: null
       }
-      )
+      ).end();
+    }
 }
 

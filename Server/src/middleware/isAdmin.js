@@ -1,6 +1,5 @@
 require("dotenv").config();
 
-
 const jwt = require('jsonwebtoken');
 const admin = require('../models/admin.js');
 
@@ -9,7 +8,7 @@ const isValid = async(req, res, next)=>{
     if(!req.headers.token){
         return res.send({
             status: 404,
-            message: "You need to Login as Admin"
+            message: "Login as Admin first"
         })
     }
     const verifyToken = jwt.verify(req.headers.token, process.env.JWT_KEY)

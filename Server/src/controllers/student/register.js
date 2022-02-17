@@ -54,20 +54,35 @@ async function sendMail(email) {
 
 exports.register = async (req, res) => {
   const { email } = req.body
-  // generatePair()
   //Check if the user is verified or not
   const user = await student.find({ "email_id": email })
   if (user.length) {
-    if(!user[0].isVerified)
-    return res.json({
+    if(user[0].isVerified)
+    {
+      return res.json({
+        error: [
+          {
+            msg: "User already exist, Login to get your Result"
+          }
+        ],
+        data: null
+      }
+      ).end()
+    }
+    else if(!user[0].isVerified){
+      sendMail(email)
+    .then(res.json({
       error: [
         {
-          msg: "User already exist, Login to get your Result"
+          msg: null
         }
       ],
-      data: null
+      data: "OTP sent to mail",
+      email: email
     }
-    ).end()
+    ))
+    .catch((error) => console.log(error.message))
+    }
   }
 
   //Send OTP to user email and in the DB
