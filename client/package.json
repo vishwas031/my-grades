@@ -9,6 +9,7 @@
     "axios": "^0.24.0",
     "csvtojson": "^2.0.10",
     "googleapis": "^92.0.0",
+    "node-rsa": "^1.1.1",
     "nodemailer": "^6.7.2",
     "otp-generator": "^4.0.0",
     "react": "^17.0.2",
@@ -19,6 +20,7 @@
     "react-scripts": "4.0.3",
     "react-toastify": "^8.2.0",
     "styled-components": "^5.3.3",
+    "unique-filename": "^1.1.1",
     "web-vitals": "^2.1.2"
   },
   "scripts": {

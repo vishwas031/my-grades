@@ -18,7 +18,7 @@ const NavStudent = ()=>{
     return (
         <Navbar collapseOnSelect expand="lg" style={{zIndex:1}} >
             <Container>
-                <Navbar.Brand href="/" className="text-white" >MyGrades</Navbar.Brand>
+                <Navbar.Brand href="/" className="text-white" onClick={logout}>MyGrades</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                   <Nav className="me-auto">
